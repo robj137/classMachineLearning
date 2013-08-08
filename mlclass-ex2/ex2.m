@@ -56,7 +56,6 @@ pause;
 
 %  Setup the data matrix appropriately, and add ones for the intercept term
 [m, n] = size(X);
-
 % Add intercept term to x and X_test
 X = [ones(m, 1) X];
 

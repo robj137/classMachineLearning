@@ -8,9 +8,11 @@ function [J, grad] = costFunctionReg(theta, X, y, lambda)
 m = length(y); % number of training examples
 
 % You need to return the following variables correctly 
-J = 0;
-grad = zeros(size(theta));
-
+[J,grad] = costFunction(theta,X,y);
+regTheta = theta;
+regTheta(1) = 0;
+J = J +(lambda*0.5/m)*(regTheta'*regTheta);
+grad = grad+(lambda/m*regTheta);
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta.
 %               You should set J to the cost.
